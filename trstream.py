@@ -21,14 +21,6 @@ trdiagnosis = ''
 
 if st.button('Predict'):
     trprediction = trmodel.predict([[pc, pdw, mpv, pct]])
-
-    if(trprediction == [1]):
-        trdiagnosis = 'Stage 1'
-    if(trprediction == [2]):
-        trdiagnosis = 'Stage 2'
-    if(trprediction == [3]):
-        trdiagnosis = 'Stage 3'
-    else:
-        trdiagnosis = 'Stage 4'
-        
-    st.success(trdiagnosis)
+    
+    st.text('Stage')
+    st.success(trprediction)
